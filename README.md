@@ -47,5 +47,4 @@ The remote control receives a number of messages using the following structure:
 |`R<value>` | Sets rightt slider on value `<value>`| `R100` |
 
 ## Authors
-Anton's Mindstorms 
-Ste7an
+Anton's Mindstorms and Ste7an
