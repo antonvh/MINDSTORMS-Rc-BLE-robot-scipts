@@ -7,6 +7,12 @@ This repository contains python scripts that go with the free [MINDSTORMS Remote
 ## Usage 
 To use the scripts copy and paste them into a new Python project inside a LEGO app. You can use either the MINDSTORMS Robot Inventor App or the SPIKE Prime app.
 
+## Bugs/bugfixes
+
+### Android
+- version 1.3: buttons are not correctly encoded
+- version 2: fixed button encoding, changed github reference in help page.
+
 ## Todo
 - Refactor the script, it's not pretty but it works.
 - Add more comments
