@@ -278,8 +278,8 @@ def track_target(motor, target=0, gain=1.5):
 
 # Uncomment this to enable linkage steering on motors E and F
 # Define motors here:
-forward = port.F.motor
-steer_left = port.E.motor
+forward = port.E.motor
+steer_left = port.F.motor
 
 # Uncomment to enable tank steering on motors A and B
 # left_motor = port.A.motor
