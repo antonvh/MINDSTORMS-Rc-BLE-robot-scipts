@@ -238,20 +238,20 @@ from time import sleep_ms
 
 # Intialize
 receiver = BLESimplePeripheral(logo="05050:05050:05550:05050:05050") # H for Hot Rod
-l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, setting1, setting2 = [0]*8
+l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, l_slider, r_slider = [0]*8
 buttons = [0]*8
 
 # Remote control data callback function
 def on_rx(control):
-    global l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, setting1, setting2, buttons
+    global l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, l_slider, r_slider, buttons
     #print(control)
-    l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, setting1, setting2, buttons_char = struct.unpack("bbbbBBhhB", control)
+    l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, l_slider, r_slider, buttons_char = struct.unpack("bbbbBBhhB", control)
     for i in range(8):
          if buttons_char & 1 << i:
              buttons[i]=1
          else:
              buttons[i]=0
-    #print("rcv",l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, setting1, setting2, buttons_char)
+    #print("rcv",l_stick_hor, l_stick_ver, r_stick_hor, r_stick_ver, l_trigger, r_trigger, l_slider, r_slider, buttons_char)
     x=l_stick_hor
     y=l_stick_ver
     #print("x,y=",x,y)
@@ -316,9 +316,9 @@ while True:
         #Set motor pwms according to stick positions
         forward.pwm(r_stick_ver) # Vertical up is positive
         track_target(steer_left,
-                target = l_stick_hor * -1 + setting2
+                target = l_stick_hor * -1 + r_slider
                 # On the stick, horizontal right is positive
-                # Setting1 is steering calibration
+                # l_slider is steering calibration
                 )
 
         ## Tank steering
