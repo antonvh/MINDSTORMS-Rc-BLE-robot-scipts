@@ -1,5 +1,10 @@
 # MINDSTORMS Python Remote control over BLE
 
+## This library is not maintained anymore!
+It still works, but it is hard to use.
+For all your Remote Control fun, use the more practical [mpy-robot-tools](https://github.com/antonvh/mpy-robot-tools)
+
+## Introduction
 This repository contains python scripts that go with the free [MINDSTORMS Remote BLE App](https://play.google.com/store/apps/details?id=com.antonsmindstorms.mindstormsrc&hl=nl&gl=US). The Android App is written using http://kodular.io.
 
 ![MINDSTORMS RC](images/MINDSTORMS_RC.jpg)
